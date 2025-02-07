@@ -58,3 +58,6 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
+
+# For App Design and CSS
+gem "tailwindcss-rails"
