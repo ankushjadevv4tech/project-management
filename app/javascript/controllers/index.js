@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import AutoDismissAlertController from "./auto_dismiss_alert_controller"
+application.register("auto-dismiss-alert", AutoDismissAlertController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

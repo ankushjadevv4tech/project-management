@@ -1,11 +1,11 @@
 <% if flash[:notice].present? %>
-  <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+  <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" data-controller="auto-dismiss-alert" role="alert">
     <span class="font-medium">Info alert!</span> <%= notice %>
   </div>
 <% end %>
 
 <% if flash[:alert].present? %>
-  <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+  <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" data-controller="auto-dismiss-alert" role="alert">
     <span  pan class="font-medium">Success alert!</span> <%= alert %>
   </div>
 <% end %>
