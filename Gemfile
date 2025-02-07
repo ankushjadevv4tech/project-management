@@ -68,6 +68,8 @@ group :test do
   gem "factory_bot_rails"
 end
 
-
 # For App Design and CSS
 gem "tailwindcss-rails"
+
+# Authentication solution for app
+gem "devise"

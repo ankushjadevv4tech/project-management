@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.local?
 
-  get "home/dashboard"
-  get "home/landing"
-
-  # Defines the root path route ("/")
-  root "home#dashboard"
+  devise_for :users
+  unauthenticated { root to: "home#landing" }
+  authenticated(:user) { root to: "home#dashboard", as: :authenticated_root }
 end
