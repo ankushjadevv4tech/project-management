@@ -46,6 +46,7 @@ gem "thruster", require: false
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "letter_opener_web", "~> 3.0"
 end
 
 group :development, :test do
@@ -57,7 +58,16 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rspec-rails", "~> 7.0.0"
+  gem "ffaker"
 end
+
+group :test do
+  gem "simplecov", require: false
+  gem "shoulda-matchers", "~> 6.0"
+  gem "factory_bot_rails"
+end
+
 
 # For App Design and CSS
 gem "tailwindcss-rails"
