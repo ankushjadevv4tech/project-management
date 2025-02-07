@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :projects
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,4 +13,10 @@ Rails.application.routes.draw do
   devise_for :users
   unauthenticated { root to: "home#landing" }
   authenticated(:user) { root to: "home#dashboard", as: :authenticated_root }
+
+  resources :projects do
+    resources :comments, only: %i[new create], default: { commentable_type: "Project" }
+  end
+
+  resources :comments, only: %i[edit update destroy]
 end

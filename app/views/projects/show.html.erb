@@ -11,3 +11,11 @@
     <%= button_to "Destroy this project", @project, method: :delete, class: "mt-2 rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium" %>
   </div>
 </div>
+
+<div id="project_new_comment">
+  <%= render 'comments/form', comment: Comment.new, commentable: @project, form_url: project_comments_path(@project) %>
+</div>
+
+<div id="project_comments">
+  <%= render @project.comments %>
+</div>

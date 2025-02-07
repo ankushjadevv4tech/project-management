@@ -1,0 +1,4 @@
+<%= turbo_stream.prepend "project_comments", @comment %>
+<%= turbo_stream.update "project_new_comment" do %>
+  <%= render 'comments/form', comment: @commentable.comments.build, commentable: @commentable, form_url: project_comments_path(@commentable) %>
+<% end %>
