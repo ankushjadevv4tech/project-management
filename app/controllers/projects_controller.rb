@@ -21,8 +21,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.new(project_params)
-    @project.user = current_user
+    @project = current_user.projects.build(project_params)
 
     if @project.save
       redirect_to @project, notice: "Project was successfully created."
@@ -33,7 +32,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-    if @project.update(project_params)
+    if @project.update(project_params.merge(current_action_user: current_user))
       redirect_to @project, notice: "Project was successfully updated.", status: :see_other
     else
       render :edit, status: :unprocessable_entity
@@ -54,6 +53,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.expect(project: [ :title, :details ])
+      params.expect(project: [ :title, :details, :status ])
     end
 end

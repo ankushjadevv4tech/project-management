@@ -19,3 +19,11 @@
 <div id="project_comments">
   <%= render @project.comments %>
 </div>
+
+<br/>
+<hr/>
+<% @project.activities.each_with_index do | activity, index |%>
+  <div>
+    <p><%= index + 1 %> | <%= activity.event %> | Made by:<%= activity.user.email %><p>
+  </div>
+<% end %>
