@@ -4,6 +4,10 @@
     <%= project.title %>
   </p>
   <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= project.status.humanize %>
+  </p>
+  <p class="my-5">
     <strong class="block font-medium mb-1">Details:</strong>
     <%= project.details %>
   </p>
